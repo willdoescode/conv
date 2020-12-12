@@ -1,11 +1,14 @@
 package input
 
-import "github.com/alexflint/go-arg"
+import "flag"
 
-var Args struct {
-	Types string `arg:"positional"`
-}
+var (
+	Input  string
+	Output string
+)
 
 func init() {
-	arg.MustParse(&Args)
+	flag.StringVar(&Input, "i", "", "An input value")
+	flag.StringVar(&Output, "o", "", "An output measurement type")
+	flag.Parse()
 }

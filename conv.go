@@ -7,5 +7,5 @@ import (
 )
 
 func main() {
-	fmt.Println(input.Args.Types)
+	fmt.Println(input.Input)
 }
