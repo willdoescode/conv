@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/gookit/color"
 	"github.com/willdoescode/conv/input"
+	"github.com/willdoescode/conv/utils"
 )
 
 func init() {
@@ -21,5 +23,7 @@ func init() {
 }
 
 func main() {
-	fmt.Println(input.Input, input.Output)
+	for _, v := range utils.ReverseSlice(strings.Split(input.Input, "")).([]string) { /* Cannot use range for interface{} */
+		fmt.Printf("%s: %v\n", v, utils.IsFloat(v))
+	}
 }
